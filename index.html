@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Practice</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+  <div class="navigation">
+    <div class="heading">
+      <li><a>Frontend Practise</a></li>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Projects</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">FAQ</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Newsletter</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="hero section">
+    <h1>Bonsai</h1>
+    <h2>Pricing page (previous design)</h2>
+    <div class="heroLink">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAA+1JREFUWEedWIG1IiEMnHSinWglXytRK/leJXqVaCfcDgQIEHb19r3/visQwmQyCQr4CIAQP5XH+aqd4L19smhjDoddh7Z3b5fVfT7xam49ObTxxC02UPTd+N65xqHZxo6/OwA/AhwCwM/8e+s8/uffHwDPrcP2RPkIIbPosny+TjdRQAwudOy+kOLmMtQCaNYqGZxRtaJI/AKyq+z/KhPey9r7Enh1bB5K+SDKl2XOtUvCHiTa2QXgdwnTYYag2rmtZdEWhx6AHIwmpBAIrkYmzhoW+kEuvUzmkkPqYDk6Q8g10yjODlT4oqZo/IiEwknV4h2AfWegjBv+/HTcIw87XiUrM1LzVA+zkToTXXtBsFOELDo5EhWllG17nc+s1NBHO+1adWcmjIR9lxRcnkAgMnyIDBHgkzbzsX9AcFCnrxDcELAT4BLW0W0R0tDYTXsUfwU4qUhOYY+8ETyopoLwDoK9KqtFj7YHGyOpEym5kCG4IsjNkNogh/OSWfcm+1RZBYEZl8g9UmMV5Z5Da+jQdNo/QclwZXUe63NESDNMcNTQczUPS36mQ6dEKYpuHIq7tBkiOCvs9KSHe0yIVtSsqsfQmNJEh7JeXQW4ZaR7o3ZiyQKHW52WuPJaHUq6ZdPcZnGWkwK+zZPKn1SDSkgU4qg/+j3HG5J0ak5EzXy5C0LWU2bcSec32dojVGwaeL3+bcz23rl5aezXzh1adCJs1KxVRxrPPyiSXhaa4qoqXNlPQbOtLeN+MGVk7HWc+UqM55Jx/fxs30GoxseSuklHzYpcTp6AHG0rUvmhXgkuC2GYQeRNTALjr5UXh9R15kXFkGbKRB0ea5QbwKjOdMJKSK1byZgZi33SOUejJ7VKvmZSlPxm1/zW1TGXMDFjdSSKqJn10v6pCmNR+TFx46a6uKs18liQy4J2XDrJZ6prrUP6Zo9iHarhShMbUMxLif2JkOo+by0R2e3EsTR4rS1pGzvVmNwV5PPlQ9oDDy2I5xB7nYeBNKly8neqsJ1EWv4UlAV4hFoySth7zfOo2RdZtq1n9jSlRXUKoxrqm7tchG0Gm6JaIhPT0UMoZ3N75RFQSwgxv88lweuP7cb5ClSb/7T/1y1sOqxqiYEwXQJrN8jPRC6LXo+safLVSjpY7kCHYjgw3DY8St7LciT3cugQ/9Xe3QY2tMg4atHrkMOnuIq8IOy5qRrmuUpUaw+RZbg3r9YfOFT2jvf55a1Fy/ckx+cNBOcqPa/Rzc113XYjgNk5Itf92CB04gnB37agrlpv5Hm9pfjfn4+2TzfWCO71md957Rezh6mztVMdWolrd90YZ45GbdM+Zu58r38NTYs3k/d3LQAAAABJRU5ErkJggg==" />
+      <a href="">View Live</a><img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAydJREFUWEetl0FOHDEQRZ83XCNDJgchm+QasAApiDsE7oCClFmQHCPZJNyDMHOObJypbrdddpftnjAtIRBdrvr+v+rb7Vj6OMDXgpsv80WdUHm9bMEBNZfucYobUof8c0BDlHqrIyeG/hOcLtzi2niXVzTqr4BH4KyS+DdwAW6ndV6yj4yhJQsAAbONQOqLdsB7QH4n1jt6ViSrrlo52I7KORw+095QtADV764R0GyXpmQrcNvGqJnVHOx8xlQbVA3QOfg3BdDbLvFt+b4VUJ6CnKOk2ZSlRCsc26P4TaiuMVbwnqY+G3FpyX41JqfJ9ZKBqMTIRErzh77My1S9OC3wJYGSUGiX6ZMfeabfmeoJkNm0kRsNyQCkTTJDf+vgrrKDz3uQ5xFYn7447eXY5/ntBhA2LvbSCjP1x3GGH8wzsmUHR/9WDCUSfEczWSR6D2DCsrfAx1DsJ/BHFRYnf8SxynU+nmQy+neh4ImDe++4LJpq4+DGw98QJ/L1LCNJVmD1HZPUEn8FLi0ZHGw8XKnxlaNGXN5wFC2ZuH93ymIa6R3xDKmzxvPc7CFYg3sJEAZAzY4LL13Rt366bejFIUbL9Qn40gF0DTyEGGlumbra05syk1yxfpkueRqA4tprcA+BodhHFUQB0CLJYgrlqMhk6Wkag3K63+FjjH0C5E6pxj5l6029PneqTQ1scFypDm7m3Rus01cXzWLdqceosY/GnZ0A99OkKXI2wA3D2A//DXI17brooRQbATWWn+LYqd2vgQ9hVz+AF7VDdbvMj6Aif6+pjdZLGZbeAkeXjuOeQ3g9oDlGOVy/+3hnzpq6N1Wq/62zLBUzJGtqLyun64f8LaxkBmieWvNOTWPfPzomC219uRrX8qbqs5fVHqpbfJeojg/XBz8dSUF1TYGp/WuwNGBOtOojSR+u4TsrfZHKhX9wfhtQjE/faMvU1RgzMIPZ5+5t8xrnoPgSnP1/dn40+clfhmSxmepLlwlWi6qxW/vgnDNkb7uzVaPsYQhj/uw+1Cf4eIXtWk73UB9Oeb+o0q4s6zDC5/ehRF2ZtIa32WJ6TJex+w9nFQ8776dZ+gAAAABJRU5ErkJggg==" />
+      <a href="">Free Photo Assets</a><img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAupJREFUWEelWNF12zAMPE5Se5N6ktiTNJ3E2STexOokrEGCEkgCBNzqJ3oSBB4PxwOcBPVKSMjIyrsE7M/lfTiPkmB8tOfSF/CX7cFY8bE8FKXyYDE0Bb9Hmb6ceNoBem9ve/QJwDfnvADYyv0E9F8ZinzHMeVPwh0ZVwb0BeC2pMHJXxmSC1jZ7JgsEmzIBdCjpYnsr8MQ+WARc3+VqLHTMAiW3hCY2LBzypYFyDO7aQPy2VPvAbW3GOOUcbqJmm7H14R8N7zqlhO+VkZmWUynIUc+4+snADphw1WW2pBwVgFZZquV7BCX7dScj3RD+tmpVHyLxE16il0zoMB5POpDvvNTJ2d/Sn50tkpTGhD7xtGM6qPxBZWBFvshFqRnrTz7vb8YNo4hcNUw698/4n63iAZFblTZuSxfxCSkSYfiCRA5/M6NUAJyrYrjlG/YiyUgkaKUtsERx76EDGKN6dGNsoiqzy8JeDR5aj50gJKimwTosChR2pWjUi011NIEmLJXCSiHxH7LAxiSSsfQII1rll4TWGUunSo20kxtwMpr06k5NsCUqyAZwAJesysOnNaZiv88NROLQBFLd8fbklhSzFIb92JM2Rs/jjYvWFqNVrLjWZ9tAMqAlBiFpglXAg1u7khyOPVSsOWlMogpx94QKZvtJSF3fmP9zHKlkIBnVkcN91MZ8PnSwm/ZIrquYLQOHmGm0nBLcQBY5lk/Ey3CziN8SJmBKi5D0Mv6WCtOzjwGdsZoZBH6MUVNgxgxQGVZXV3ZtMAIoPWo2ly3Zqc56p6Ak+potVXso0YHqJ0R1dx76EbuMp7yj8KOOTLSj5eRfioztTtrm62DMWn64V6UHnL0LPF9RQtb8ocAa/6CzB1ec46lBQG/Bl1UVpyPhNmegPwx5CjDv5XC0xDR33ZZOrTvocJQjmITW7S5ExKIoTZfD8S28WPyDzXpdCjkZ7IFhf+VoxwzT0POKR5eR+gLlDtiv+8B+4/ovwcMHjh0TBHBAAAAAElFTkSuQmCC" />
+      <a href="">Open Source Icons</a>
+    </div>
+  </div>
+
+  <div class="section section1">
+    <div class="learn card">
+      <h3>Recreate this to learn:</h3>
+      <ul>
+        <li>Pricing layout</li>
+        <li>Toggle switches</li>
+        <li>Dropdowns</li>
+        <li>Accordions</li>
+        <li>and more!</li>
+      </ul>
+    </div>
+    <div class="color card">
+      <h3>Color Palatte</h3>
+      <p>#00b289
+      </p>
+      <p>#4c4d5f
+      </p>
+      <p>#4c4d5f
+      </p>
+      <p>#f8db62
+      </p>
+    </div>
+    <div class="resources card">
+      <h3>Resources</h3>
+      <div class="resourcesLink">
+        <ul>
+            <li>
+              <a href="">Creating a dropdown menu</a>
+            </li>
+            <li>
+              <a href="">Accessible accordions </a>
+            </li>
+            <li>
+              <a href="">How To Create a Toggle Switch</a>
+            </li>
+            <li><a href="">Multi-Level Sticky Footer</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
