@@ -4,90 +4,385 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frontend Practice</title>
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Pricing - Bonsai Freelance Solutions</title>
   <link rel="stylesheet" href="styles.css" />
-
 </head>
 
 <body>
-  <div class="navigation">
-    <div class="heading">
-      <li><a>Frontend Practise</a></li>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Projects</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">FAQ</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">Newsletter</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="hero section">
-    <h1>Bonsai</h1>
-    <h2>Pricing page (previous design)</h2>
-    <div class="heroLink">
+  <nav>
+    <div class="navSection1">
       <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAA+1JREFUWEedWIG1IiEMnHSinWglXytRK/leJXqVaCfcDgQIEHb19r3/visQwmQyCQr4CIAQP5XH+aqd4L19smhjDoddh7Z3b5fVfT7xam49ObTxxC02UPTd+N65xqHZxo6/OwA/AhwCwM/8e+s8/uffHwDPrcP2RPkIIbPosny+TjdRQAwudOy+kOLmMtQCaNYqGZxRtaJI/AKyq+z/KhPey9r7Enh1bB5K+SDKl2XOtUvCHiTa2QXgdwnTYYag2rmtZdEWhx6AHIwmpBAIrkYmzhoW+kEuvUzmkkPqYDk6Q8g10yjODlT4oqZo/IiEwknV4h2AfWegjBv+/HTcIw87XiUrM1LzVA+zkToTXXtBsFOELDo5EhWllG17nc+s1NBHO+1adWcmjIR9lxRcnkAgMnyIDBHgkzbzsX9AcFCnrxDcELAT4BLW0W0R0tDYTXsUfwU4qUhOYY+8ETyopoLwDoK9KqtFj7YHGyOpEym5kCG4IsjNkNogh/OSWfcm+1RZBYEZl8g9UmMV5Z5Da+jQdNo/QclwZXUe63NESDNMcNTQczUPS36mQ6dEKYpuHIq7tBkiOCvs9KSHe0yIVtSsqsfQmNJEh7JeXQW4ZaR7o3ZiyQKHW52WuPJaHUq6ZdPcZnGWkwK+zZPKn1SDSkgU4qg/+j3HG5J0ak5EzXy5C0LWU2bcSec32dojVGwaeL3+bcz23rl5aezXzh1adCJs1KxVRxrPPyiSXhaa4qoqXNlPQbOtLeN+MGVk7HWc+UqM55Jx/fxs30GoxseSuklHzYpcTp6AHG0rUvmhXgkuC2GYQeRNTALjr5UXh9R15kXFkGbKRB0ea5QbwKjOdMJKSK1byZgZi33SOUejJ7VKvmZSlPxm1/zW1TGXMDFjdSSKqJn10v6pCmNR+TFx46a6uKs18liQy4J2XDrJZ6prrUP6Zo9iHarhShMbUMxLif2JkOo+by0R2e3EsTR4rS1pGzvVmNwV5PPlQ9oDDy2I5xB7nYeBNKly8neqsJ1EWv4UlAV4hFoySth7zfOo2RdZtq1n9jSlRXUKoxrqm7tchG0Gm6JaIhPT0UMoZ3N75RFQSwgxv88lweuP7cb5ClSb/7T/1y1sOqxqiYEwXQJrN8jPRC6LXo+safLVSjpY7kCHYjgw3DY8St7LciT3cugQ/9Xe3QY2tMg4atHrkMOnuIq8IOy5qRrmuUpUaw+RZbg3r9YfOFT2jvf55a1Fy/ckx+cNBOcqPa/Rzc113XYjgNk5Itf92CB04gnB37agrlpv5Hm9pfjfn4+2TzfWCO71md957Rezh6mztVMdWolrd90YZ45GbdM+Zu58r38NTYs3k/d3LQAAAABJRU5ErkJggg==" />
-      <a href="">View Live</a><img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAydJREFUWEetl0FOHDEQRZ83XCNDJgchm+QasAApiDsE7oCClFmQHCPZJNyDMHOObJypbrdddpftnjAtIRBdrvr+v+rb7Vj6OMDXgpsv80WdUHm9bMEBNZfucYobUof8c0BDlHqrIyeG/hOcLtzi2niXVzTqr4BH4KyS+DdwAW6ndV6yj4yhJQsAAbONQOqLdsB7QH4n1jt6ViSrrlo52I7KORw+095QtADV764R0GyXpmQrcNvGqJnVHOx8xlQbVA3QOfg3BdDbLvFt+b4VUJ6CnKOk2ZSlRCsc26P4TaiuMVbwnqY+G3FpyX41JqfJ9ZKBqMTIRErzh77My1S9OC3wJYGSUGiX6ZMfeabfmeoJkNm0kRsNyQCkTTJDf+vgrrKDz3uQ5xFYn7447eXY5/ntBhA2LvbSCjP1x3GGH8wzsmUHR/9WDCUSfEczWSR6D2DCsrfAx1DsJ/BHFRYnf8SxynU+nmQy+neh4ImDe++4LJpq4+DGw98QJ/L1LCNJVmD1HZPUEn8FLi0ZHGw8XKnxlaNGXN5wFC2ZuH93ymIa6R3xDKmzxvPc7CFYg3sJEAZAzY4LL13Rt366bejFIUbL9Qn40gF0DTyEGGlumbra05syk1yxfpkueRqA4tprcA+BodhHFUQB0CLJYgrlqMhk6Wkag3K63+FjjH0C5E6pxj5l6029PneqTQ1scFypDm7m3Rus01cXzWLdqceosY/GnZ0A99OkKXI2wA3D2A//DXI17brooRQbATWWn+LYqd2vgQ9hVz+AF7VDdbvMj6Aif6+pjdZLGZbeAkeXjuOeQ3g9oDlGOVy/+3hnzpq6N1Wq/62zLBUzJGtqLyun64f8LaxkBmieWvNOTWPfPzomC219uRrX8qbqs5fVHqpbfJeojg/XBz8dSUF1TYGp/WuwNGBOtOojSR+u4TsrfZHKhX9wfhtQjE/faMvU1RgzMIPZ5+5t8xrnoPgSnP1/dn40+clfhmSxmepLlwlWi6qxW/vgnDNkb7uzVaPsYQhj/uw+1Cf4eIXtWk73UB9Oeb+o0q4s6zDC5/ehRF2ZtIa32WJ6TJex+w9nFQ8776dZ+gAAAABJRU5ErkJggg==" />
-      <a href="">Free Photo Assets</a><img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAupJREFUWEelWNF12zAMPE5Se5N6ktiTNJ3E2STexOokrEGCEkgCBNzqJ3oSBB4PxwOcBPVKSMjIyrsE7M/lfTiPkmB8tOfSF/CX7cFY8bE8FKXyYDE0Bb9Hmb6ceNoBem9ve/QJwDfnvADYyv0E9F8ZinzHMeVPwh0ZVwb0BeC2pMHJXxmSC1jZ7JgsEmzIBdCjpYnsr8MQ+WARc3+VqLHTMAiW3hCY2LBzypYFyDO7aQPy2VPvAbW3GOOUcbqJmm7H14R8N7zqlhO+VkZmWUynIUc+4+snADphw1WW2pBwVgFZZquV7BCX7dScj3RD+tmpVHyLxE16il0zoMB5POpDvvNTJ2d/Sn50tkpTGhD7xtGM6qPxBZWBFvshFqRnrTz7vb8YNo4hcNUw698/4n63iAZFblTZuSxfxCSkSYfiCRA5/M6NUAJyrYrjlG/YiyUgkaKUtsERx76EDGKN6dGNsoiqzy8JeDR5aj50gJKimwTosChR2pWjUi011NIEmLJXCSiHxH7LAxiSSsfQII1rll4TWGUunSo20kxtwMpr06k5NsCUqyAZwAJesysOnNaZiv88NROLQBFLd8fbklhSzFIb92JM2Rs/jjYvWFqNVrLjWZ9tAMqAlBiFpglXAg1u7khyOPVSsOWlMogpx94QKZvtJSF3fmP9zHKlkIBnVkcN91MZ8PnSwm/ZIrquYLQOHmGm0nBLcQBY5lk/Ey3CziN8SJmBKi5D0Mv6WCtOzjwGdsZoZBH6MUVNgxgxQGVZXV3ZtMAIoPWo2ly3Zqc56p6Ak+potVXso0YHqJ0R1dx76EbuMp7yj8KOOTLSj5eRfioztTtrm62DMWn64V6UHnL0LPF9RQtb8ocAa/6CzB1ec46lBQG/Bl1UVpyPhNmegPwx5CjDv5XC0xDR33ZZOrTvocJQjmITW7S5ExKIoTZfD8S28WPyDzXpdCjkZ7IFhf+VoxwzT0POKR5eR+gLlDtiv+8B+4/ovwcMHjh0TBHBAAAAAElFTkSuQmCC" />
-      <a href="">Open Source Icons</a>
+        src="https://web.archive.org/web/20220528151213im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7cd432feb68e_bonsai-logo.svg"
+        width="120" alt="Bonsai logo" />
+    </div>
+    <div class="navSection2">
+      <div class="dropdown"><a href="">Product</a></div>
+      <div class="dropdown"><a href="">Templates</a></div>
+      <a href="">Pricing</a>
+      <a href="">Reviews</a>
+    </div>
+    <div class="navSection3">
+      <button class="noFill">LOG IN</button>
+      <button class="fill">START FREE</button>
+    </div>
+    <div class="hamburger-menu" onclick="openModal()">&#9776;</div>
+  </nav>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <ul>
+        <li><a href="">Product</a></li>
+        <li><a href="">Templates</a></li>
+        <li><a href="">Pricing</a></li>
+        <li><a href="">Reviews</a></li>
+        <li><button class="noFill navButton">LOG IN</button></li>
+        <li><button class="fill navButton">START FREE</button></li>
+      </ul>
     </div>
   </div>
 
-  <div class="section section1">
-    <div class="learn card">
-      <h3>Recreate this to learn:</h3>
-      <ul>
-        <li>Pricing layout</li>
-        <li>Toggle switches</li>
-        <li>Dropdowns</li>
-        <li>Accordions</li>
-        <li>and more!</li>
-      </ul>
+  <div class="cardHead">
+    <h1 class="serif">Plans & Pricing</h1>
+    <div class="cardHeadSection2" id="cardHeadSection2">
+      <p>MONTHLY</p>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <p>YEARLY</p>
     </div>
-    <div class="color card">
-      <h3>Color Palatte</h3>
-      <div class="colormain">
-        <div class="colorPalate">
-          <div class="item">
-            <span class="dot" style="background-color: #00B289;"></span>#00B289
-          </div>
-          <div class="item"><span class="dot" style="background-color: #fff;"></span>#fff</div>
-          </div>
-          <div class="colorPalate">
-            <div class="item ">
-              <span class="dot" style="background-color: #4C4D5F;"></span>#4c4d5f
-          </div>
-          <div class="item">
-            <span class="dot" style="background-color: #F8DB62;"></span>#f8db62
-          </div>
-        </div>
+  </div>
+  <div class="cardCollection">
+    <div class="card">
+      <h1>Starter</h1>
+      <p>Ideal for freelancers and contractors just starting out.</p>
+      <div class="cardPrice">
+        <span class="currencySymbol">$</span><span class="value">24</span><span class="per">/MONTH</span>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">All Templates</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Unlimited Clients & Projects</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Invoicing & Payments</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Proposals & Contracts</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Tasks & Time Tracking</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Client CRM</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Expense Tracking</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Up to 5 Project Collaborators</p>
+      </div>
+      <button class="fill cardButton">Start Free</button>
+    </div>
+    <div class="card">
+      <h1>Professional</h1>
+      <p>Everything a growing independent business needs to thrive.</p>
+      <div class="cardPrice">
+        <span class="currencySymbol">$</span><span class="value">39</span><span class="per">/MONTH</span>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Everything in Starter plus...</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Custom Branding</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Forms & Questionnaires</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Workflow Automations</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Client Portal</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">QuickBooks Integration</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Calendly Integration</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Zapier Integration</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Up to 15 Project Collaborators</p>
+      </div>
+      <button class="fill cardButton">Start Free</button>
+    </div>
+    <div class="card">
+      <h1>Business</h1>
+      <p>The perfect package for small businesses and agencies.</p>
+      <div class="cardPrice">
+        <span class="currencySymbol">$</span><span class="value">79</span><span class="per">/MONTH</span>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">
+          Everything in Starter and Professional plus...
+        </p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Subcontractor Management</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">
+          Hiring Agreement Templates (1099 contracts)
+        </p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Subcontractor Onboarding</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Talent Pool</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">3 Team Seats (additional seats $9/month)</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Accountant Access</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Connect Multiple Bank Accounts</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Unlimited Subcontractors</p>
+      </div>
+      <div class="cardList">
+        <img
+          src="https://web.archive.org/web/20220405184059im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e668ac7510abc1d0f5c1c14_green-tick.svg"
+          width="12" alt="tick icon" />
+        <p class="cardListText">Unlimited Project Collaborators</p>
+      </div>
+      <button class="fill cardButton">Start Free</button>
+    </div>
+  </div>
+  <h2 class="textCenter">Super charge you work with add-ons</h2>
+  <div class="addOns">
+    <div class="addOnCard">
+      <div class="addOnCardSection1">
+        <h2>Collaborators</h2>
+        <p>
+          Invite other users to specific projects for limited access and
+          functionality.
+        </p>
+      </div>
+      <div class="addOnCardSection2">
+        <h1>Free</h1>
       </div>
     </div>
-    <div class="resources card">
-      <h3>Resources</h3>
-      <div class="resourcesLink">
-        <ul>
-          <li>
-            <a href="">Creating a dropdown menu</a>
-          </li>
-          <li>
-            <a href="">Accessible accordions </a>
-          </li>
-          <li>
-            <a href="">How To Create a Toggle Switch</a>
-          </li>
-          <li><a href="">Multi-Level Sticky Footer</a></li>
-        </ul>
+
+    <div class="addOnCard">
+      <div class="addOnCardSection1">
+        <h2>Partners</h2>
+        <p>
+          Invite other users for full account access and company management.
+        </p>
+      </div>
+      <div class="addOnCardSection2">
+        <h1>$9</h1>
+        <p>/MONTH</p>
+      </div>
+    </div>
+
+    <div class="addOnCard">
+      <div class="addOnCardSection1">
+        <h2>Bonsai Tax</h2>
+        <p>
+          Track expenses, identify write-offs, and estimate quarterly taxes
+          easily.
+        </p>
+        <a href=""><span class="green">LEARN MORE</span></a>
+      </div>
+      <div class="addOnCardSection2">
+        <h1>$9</h1>
+        <p>/MONTH</p>
       </div>
     </div>
   </div>
+
+  <div class="startFreeCard">
+    <h1>
+      It’s <span class="green serif">your</span> business. We’re here to help it
+      grow.
+    </h1>
+    <button class="fill">START FREE</button>
+  </div>
+
+  <div class="FAQ">
+    <h2><span class="green ">Frequently Asked Questions</span></h2>
+    <div class="faqLine">
+      <h3>How does the free trial work?</h3><box-icon name='chevron-down'></box-icon>
+    </div>
+    <div class="faqLine">
+      <h3>Can I change plans anytime?</h3><box-icon name='chevron-down'></box-icon>
+    </div>
+    <div class="faqLine">
+      <h3>How do I pause my Bonsai subscription?</h3><box-icon name='chevron-down'></box-icon>
+    </div>
+    <div class="faqLine">
+      <h3>What is your refund policy?</h3><box-icon name='chevron-down'></box-icon>
+    </div>
+  </div>
+  <footer>
+    <div class="footerProd footerSection">
+      <h3>PRODUCT</h3>
+      <li>Proposals</li>
+      <li>Invoicing</li>
+      <li>Client CRM</li>
+      <li>Time Tracking</li>
+      <li>Forms</li>
+      <li>Accounting</li>
+      <li>Bonsai Tax</li>
+      <li>Bonsai Tax</li>
+      <li>Bonsai Cash</li>
+      <br><br>
+      <li><span class="green">Pricing</span></li>
+      <li>Bonsai Reviews</li>
+    </div>
+    <div class="footerRes footerSection">
+      <h3>FREE RESOURCES</h3>
+      <li>Freelane Resources</li>
+      <li>Freelance Blog by Bonsai</li>
+      <li>How to Write a Contract</li>
+      <li>Online Signature Maker </li>
+      <br>
+      <li>Self-Employed Taxes Hub</li>
+      <li>Self-Employed Tax Calculator</li>
+      <li> Self-Employed Tax Deductions</li>
+      <br><br>
+      <h3>Templates</h3>
+      <li class="footerDropdown">Invoice Template<box-icon name='chevron-down'></box-icon></li>
+      <li class="footerDropdown">Contract Template<box-icon name='chevron-down'></box-icon></li>
+      <li class="footerDropdown">Proposal Template<box-icon name='chevron-down'></box-icon></li>
+      <li class="footerDropdown">Agreement Template<box-icon name='chevron-down'></box-icon></li>
+      <li class="footerDropdown">Scope of Work Template<box-icon name='chevron-down'></box-icon></li>
+      <li class="footerDropdown">Quote Template<box-icon name='chevron-down'></box-icon></li>
+      <li>Credit Note Template</li>
+      <li>Estimate Template</li>
+      <li>Form Template</li>
+    </div>
+    </div>
+    <div class="footerBon footerSection">
+      <h3>BONSAI</h3>
+      <li>About</li>
+      <li>Careers</li>
+      <li>Support</li>
+      <li>LinkedIn</li>
+      <li>Twitter</li>
+      <li>Privacy Policy</li>
+      <li>Legal</li>
+      <br>
+      <li>Affiliates</li>
+      <li>Write for Us</li>
+    </div>
+  </footer>
 </body>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script>
+  function openModal() {
+    document.getElementById('modal').style.display = 'flex';
+    document.getElementById('cardHeadSection2').style.zIndex = '-1';
+  }
+
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('cardHeadSection2').style.zIndex = '0';
+  }
+
+  window.onclick = function (event) {
+    if (event.target == document.getElementById('modal')) {
+      closeModal();
+    }
+  }
+</script>
 
 </html>
